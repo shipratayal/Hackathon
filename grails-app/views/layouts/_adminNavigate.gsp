@@ -1,13 +1,13 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="${createLink(uri: '/admin')}">Shoopers</a>
+            <a class="navbar-brand" href="${createLink(action: 'dashboard', controller: 'admin')}">Shoopers</a>
         </div>
 
         <div>
             <ul class="nav navbar-nav">
-                <li><a href="${createLink(controller: 'store', action: 'allStore')}">All Store</a></li>
-                <li><a href="${createLink(controller: 'book', action: 'allBook')}">All Book</a></li>
+                <li><a id="store" href="${createLink(controller: 'store', action: 'allStore')}">All Store</a></li>
+                <li><a id="allBook" href="${createLink(controller: 'book', action: 'allBook')}">All Book</a></li>
                 <li><a href="${createLink(controller: 'author', action: 'allAuthor')}">All Author</a></li>
                 <li><a href="${createLink(controller: 'publication', action: 'allPublication')}">All Publication</a>
                 </li>
@@ -19,13 +19,16 @@
                         class="glyphicon glyphicon-user"></span><sec:loggedInUserInfo field="username"/></a></li>
                 <li>
                     <sec:ifLoggedIn>
-                        <a href="${createLink(controller: 'logout')}"><span class="glyphicon glyphicon-log-out">Logout</a>
+                        <a href="${createLink(controller: 'logout')}"><span class="glyphicon glyphicon-log-out">Logout
+                        </a>
                     </sec:ifLoggedIn>
                     <sec:ifNotLoggedIn>
-                        <a href="${createLink(controller: 'login', action: 'auth')}"><span class="glyphicon glyphicon-log-in"></span>My Account</a>
+                        <a href="${createLink(controller: 'login', action: 'auth')}"><span
+                                class="glyphicon glyphicon-log-in"></span>My Account</a>
                     </sec:ifNotLoggedIn>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
